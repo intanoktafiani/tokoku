@@ -1,0 +1,95 @@
+{
+	'name': 'Web API Tokoku',
+	'deskripsi': 'Selain endpoint barang, menggunakan otentikasi. Otentikasi menggunakan Basic Authentication',
+	'endpoint': [
+		{
+			'uri': 'http://tokoku.kilatiron.com/api/v1/barang/[id_barang]'
+			'method': 'GET'
+			'response': {
+					'bobot': '',
+					'deskripsi': '',
+					'harga': '',
+					'idBarang': '',
+					'idKategoriBarang': '',
+					'lokasiGambar': '',
+					'namaBarang': '',
+					'satuan': '',
+					'stok': '',
+					'directoryGambar': ''
+				}
+		},
+		{
+			'uri': 'http://tokoku.kilatiron.com/api/v1/barang/kategori/[nama_kategori]'
+			'method': 'GET'
+			'respon':[
+					{
+						'bobot': '',
+						'deskripsi': '',
+						'harga': '',
+						'idBarang': '',
+						'idKategoriBarang': '',
+						'lokasiGambar': '',
+						'namaBarang': '',
+						'satuan': '',
+						'stok': '',
+						'directoryGambar': ''
+					},
+					...
+				]
+		},
+		{
+			'uri': 'http://tokoku.kilatiron.com/api/v1/pembelian',
+			'method': 'GET',
+			'header': 'Authorization: Basic [KEY]',
+			'response':
+				[
+					{
+						'idTransaksi': '',
+						'statusTransaksi': '',
+						'nomorResi': '',
+						'jumlahNominal': '',
+						'alamatPengiriman': '',
+						'kodePosPengiriman': '',
+						'waktuPembayaran': '',
+						'waktuCheckout': '',
+						'kodeVoucher': '',
+						'potonganVoucher': '',
+						'idPelanggan': '',
+						'nomorRekeningTujuan': '',
+						'provinsi': '',
+						'kabupaten': '',
+						'kecamatan': '',
+						'biayaPengiriman': ''
+					},
+					...
+				]
+		},
+		{
+			'uri': 'http://tokoku.kilatiron.com/api/v1/pembelian',
+			'method': 'post',
+			'header': 'Authorization: Basic [KEY]',
+			'request': {
+					'pesanan': [
+						{
+							'idBarang': '',
+							'kuantitas': ''
+						},
+						{
+							'idBarang': '',
+							'kuantitas': '',
+							'detail': '' // boleh kosong
+						}
+					],
+					'alamat': {
+						'provinsi': '',
+						'kabupaten': '',
+						'kecamatan': '',
+						'detail': '',
+						'kodepos': ''
+					},
+					'kodeVoucher': ''
+				},
+			'response': ''
+		}
+	]
+}
